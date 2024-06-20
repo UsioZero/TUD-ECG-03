@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 C:\Users\borod\source\repos\TUD-ECG-03\build\vs2022\Debug\graph_prog.exe
-=======
-C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\build\vs2022\Debug\graph_prog.exe
->>>>>>> 232629c53315bdaaa3f21552e6050442d3e972f1

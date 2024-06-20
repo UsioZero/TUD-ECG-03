@@ -1,5 +1,38 @@
-﻿  graph_prog.vcxproj -> C:\Users\borod\Source\Repos\TUD-ECG-03\build\vs2022\Debug\graph_prog.exe
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  qdbmp.cpp
+  example_trans_order.cpp
+  example_primitives.cpp
+  example_cons_primitives.cpp
+  example_3d_primitives.cpp
+  terrain.cpp
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(392,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(392,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(393,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(393,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  recursive_cubes.cpp
+  cube_system_split.cpp
+  cube_system.cpp
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(54,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(60,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(62,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(62,19): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(62,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(68,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(70,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(70,16): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(70,11): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(71,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(79,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(81,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(81,16): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(81,11): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\borod\source\repos\TUD-ECG-03\src\cube_system.cpp(82,22): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  abstract_scene.cpp
+  main.cpp
+  application.cpp
+  Generating Code...
+application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  graph_prog.vcxproj -> C:\Users\borod\source\repos\TUD-ECG-03\build\vs2022\Debug\graph_prog.exe
   Copy freeglut .dll to executable location
   ..\..\dependencies\freeglut\lib\freeglut.dll
   1 Datei(en) kopiert
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(5532,5): error MSB3541: Files has invalid value "<<<<<<< HEAD". Illegal characters in path.

@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\borod\Source\Repos\TUD-ECG-03\build\vs2022\Debug\graph_prog.exe</FullPath>
+      <FullPath>C:\Users\borod\source\repos\TUD-ECG-03\build\vs2022\Debug\graph_prog.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
