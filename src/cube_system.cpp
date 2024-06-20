@@ -49,6 +49,43 @@ void cube_system::advance_frame()
 // Render the cube system
 void cube_system::render_system()
 {
+	// 1
+    glPushMatrix();
+    glRotatef(angle, 0, 1, 0);
+    render_cube();
+	glPopMatrix();
+
+	// 2
+	glPushMatrix();
+    glRotatef(-angle, 0, 1, 0);
+    glTranslatef(5, 0, 0);
+    glScalef(0.6, 0.6, 0.6);
+	render_cube();
+	glPopMatrix();
+
+	// 3
+	glPushMatrix();
+	glRotatef(-angle, 0, 1, 0);
+	glTranslatef(5, 0, 0);
+	glScalef(0.6, 0.6, 0.6);
+    glRotatef(2 * angle, 0, 0, 1);
+    glTranslatef(3, 0, 0);
+    glScalef(0.5, 0.5, 0.5);
+    render_cube();
+	glPopMatrix();
+
+	// 4
+	glPushMatrix();
+	glRotatef(-angle, 0, 1, 0);
+	glTranslatef(5, 0, 0);
+	glScalef(0.6, 0.6, 0.6);
+	glRotatef(2 * angle + 180, 0, 0, 1);
+	glTranslatef(3, 0, 0);
+	glScalef(0.5, 0.5, 0.5);
+	render_cube();
+	glPopMatrix();
+
+
 	/********
 	Task 2.1.2.    Program the transformation tree from the exercise sheet. To store the
 	               active aggregated transformation matrix on top of a stack use glPushMatrix 
@@ -68,7 +105,7 @@ void cube_system::render_system()
 	// Remove the following statement (if wanted) as it just serves 2.1.1.
 	// Entfernen Sie die folgende Anweisung gegebenenfalls, da sie lediglich dem Testen
 	// von Aufgabe 2.1.1 dient.
-	render_cube();
+	//render_cube();
 }
 
 
@@ -78,6 +115,55 @@ void cube_system::render_system()
 // Render one single cube
 void cube_system::render_cube()
 {
+	glBegin(GL_QUADS);
+	glColor3d(0.0, 0.2, 0.0);  
+	glVertex3d(-1, -1, 1);   
+	glVertex3d(1, -1, 1);    
+	glVertex3d(1, 1, 1);     
+	glVertex3d(-1, 1, 1);    
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3d(0.0, 0.4, 0.0);  
+	glVertex3d(-1, -1, -1); 
+	glVertex3d(-1, 1, -1);   
+	glVertex3d(1, 1, -1);    
+	glVertex3d(1, -1, -1);  
+	glEnd();
+
+
+	glBegin(GL_QUADS);
+	glColor3d(0.0, 0.6, 0.0);  
+	glVertex3d(-1, -1, -1);   
+	glVertex3d(-1, -1, 1);    
+	glVertex3d(-1, 1, 1);    
+	glVertex3d(-1, 1, -1);   
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3d(0.0, 0.8, 0.0);  
+	glVertex3d(1, -1, -1);   
+	glVertex3d(1, 1, -1);   
+	glVertex3d(1, 1, 1);     
+	glVertex3d(1, -1, 1);     
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3d(0.0, 1.0, 0.0); 
+	glVertex3d(-1, 1, 1);    
+	glVertex3d(1, 1, 1);     
+	glVertex3d(1, 1, -1);  
+	glVertex3d(-1, 1, -1);   
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3d(0.0, 0.5, 0.0);  
+	glVertex3d(-1, -1, -1);  
+	glVertex3d(1, -1, -1);   
+	glVertex3d(1, -1, 1);   
+	glVertex3d(-1, -1, 1);   
+	glEnd();
+
 	/********
 	Task 2.1.1.    Tesellate a cube by specifying vertices and colors via the commands 
 	               glVertex3d and glColor3d. Choose appropriate primitives (parameter to 

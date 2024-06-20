@@ -1,5 +1,20 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  recursive_cubes.cpp
+  cube_system.cpp
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(54,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(60,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(62,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(62,19): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(62,14): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(68,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(70,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(70,16): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(70,11): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(71,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(79,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(81,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(81,16): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(81,11): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(82,22): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   graph_prog.vcxproj -> C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\build\vs2022\Debug\graph_prog.exe
   Copy freeglut .dll to executable location
   ..\..\dependencies\freeglut\lib\freeglut.dll
