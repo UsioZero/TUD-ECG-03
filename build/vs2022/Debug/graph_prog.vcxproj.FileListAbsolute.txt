@@ -1,0 +1,1 @@
+C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\build\vs2022\Debug\graph_prog.exe

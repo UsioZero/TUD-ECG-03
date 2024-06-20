@@ -1,0 +1,6 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  recursive_cubes.cpp
+  graph_prog.vcxproj -> C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\build\vs2022\Debug\graph_prog.exe
+  Copy freeglut .dll to executable location
+  ..\..\dependencies\freeglut\lib\freeglut.dll
+  1 File(s) copied

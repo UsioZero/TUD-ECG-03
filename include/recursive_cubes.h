@@ -42,7 +42,7 @@ private:
 	// The recursive render method. "r" contains the current
 	// recursion depth and "render_first" is a flag to inicate
 	// that all sides have neighbours.
-	void render_recursive(int r, bool render_all);
+	void render_recursive(int r, int skip_edge);
 
 	// Render one single cube
 	void render_cube();
