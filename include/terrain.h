@@ -92,6 +92,9 @@ private:
 	// Create height lines for the level "level"
 	void create_level_line(int level);
 
+	void add_line_segment(double x1, double y1, double x2, double y2);
+
+	double interpolate(int h1, int h2, int level);
 	
 	// Load the height map from the file "filename"
 	bool load_heightmap(const char *filename);

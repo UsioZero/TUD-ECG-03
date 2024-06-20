@@ -60,7 +60,7 @@ void terrain::render()
 	glEnable(GL_NORMALIZE);
 
 	// Clear the screen
-	glClearColor(1,1,1,0);
+	glClearColor(1, 1, 1, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// Nothing to do if we are not properly initialized
@@ -103,12 +103,12 @@ void terrain::render_solid_terrain()
 
 	/********
 	Task 2.2.4.    Activate 2D texture mapping and bind the texture that
-	               is identified by the handle "texture_handle". Do not remove
+				   is identified by the handle "texture_handle". Do not remove
 				   any of the code in this method.
 	Aufgabe 2.2.4. Aktivieren Sie 2D-Texturierung und binden Sie die
-	               Textur, die ueber das Handle "texture_handle" identifiziert
+				   Textur, die ueber das Handle "texture_handle" identifiziert
 				   ist. Entfernen Sie keinen Code in dieser Methode.
-    ************/
+	************/
 
 
 
@@ -123,7 +123,7 @@ void terrain::render_solid_terrain()
 	// Disable texture mapping
 	glDisable(GL_TEXTURE_2D);
 	// Disable support for depth buffer offsets
-	glDisable(GL_POLYGON_OFFSET_FILL); 
+	glDisable(GL_POLYGON_OFFSET_FILL);
 	// Disable lighting
 	glDisable(GL_LIGHTING);
 }
@@ -141,7 +141,7 @@ void terrain::render_wireframe_terrain()
 	// Set the color to black
 	glColor3d(0, 0, 0);
 	// Render the terrain
-	render_terrain(); 
+	render_terrain();
 
 	// Set the draw mode to fill polygons
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -163,20 +163,20 @@ void terrain::render_terrain()
 	// terrain extents in the XZ-layer while the height is on the Y-axis.
 	glPushMatrix();
 	glTranslated(-1, 0, -1);
-	glScaled(2.0/static_cast<double>(map_width), 1.0/256.0, 2.0/static_cast<double>(map_height));
+	glScaled(2.0 / static_cast<double>(map_width), 1.0 / 256.0, 2.0 / static_cast<double>(map_height));
 
 
 
 
 	/********
 	Task 2.2.1.    Complete the code below to create a regular grid which expands
-	               along the X-Z-layer. Create the grid by specifying triangle
+				   along the X-Z-layer. Create the grid by specifying triangle
 				   strips for each line. The coordinate system is already scaled
 				   and translated to use the values of the variables "x" and "y"
 				   defined below directly as coordinates. The initial height of
 				   the grid shall be 0.
-	Aufgabe 2.2.1. Vervollstaendigen Sie den nachfolgenden Quelltext um die 
-	               Erstellung eines regelmaessigen Gitters das sich ueber die
+	Aufgabe 2.2.1. Vervollstaendigen Sie den nachfolgenden Quelltext um die
+				   Erstellung eines regelmaessigen Gitters das sich ueber die
 				   X-Z-Ebene erstreckt. Erstellen Sie dieses Gitter, indem Sie
 				   zeilenweise Dreiecksstreifen definieren. Das Koordinatensystem
 				   ist bereits skaliert und verschoben, so dass Sie die Werte
@@ -184,36 +184,36 @@ void terrain::render_terrain()
 				   als Koordinaten einsetzen koennen. Das Gitter soll zunaechst
 				   eine Hoehe von 0 besitzen.
 
-	
+
 	Task 2.2.2.    Now elevate the height of the vertices to create the grid terrain
-	               that corresponds to the height map. Use "get_heightmap_value(x, y)".
-    Aufgabe 2.2.2. Heben Sie jetzt die Vertices an um ein Drahtgitterterrain zu erstellen,
-	               das zur Hoehenkarte korrespondiert. Nutzen Sie die Methode 
+				   that corresponds to the height map. Use "get_heightmap_value(x, y)".
+	Aufgabe 2.2.2. Heben Sie jetzt die Vertices an um ein Drahtgitterterrain zu erstellen,
+				   das zur Hoehenkarte korrespondiert. Nutzen Sie die Methode
 				   "get_heightmap_value(x, y)".
 
 
-	Task 2.2.3.    Make sure to call "set_normal" for every vertex and continue this 
-	               task in "set_normal".
-    Aufgabe 2.2.3. Stellen Sie sicher, dass Sie "set_normal" für jeden Vertex aufrufen
-	               und fahren Sie in "set_normal" mit der Aufgabe fort.
+	Task 2.2.3.    Make sure to call "set_normal" for every vertex and continue this
+				   task in "set_normal".
+	Aufgabe 2.2.3. Stellen Sie sicher, dass Sie "set_normal" für jeden Vertex aufrufen
+				   und fahren Sie in "set_normal" mit der Aufgabe fort.
 
 
-    Task 2.2.4.    Activate texture mapping and bind the texture in the method 
-	               "render_solid_terrain". Provide 2D texture coordinates per vertex in
-				   this method using "glTexCoord2d". 
-    Aufgabe 2.2.4. Aktivieren Sie Texturmapping und binden Sie eine Textur in der
-	               Methode "render_solid_terrain". Spezifizieren Sie in dieser Methode pro
+	Task 2.2.4.    Activate texture mapping and bind the texture in the method
+				   "render_solid_terrain". Provide 2D texture coordinates per vertex in
+				   this method using "glTexCoord2d".
+	Aufgabe 2.2.4. Aktivieren Sie Texturmapping und binden Sie eine Textur in der
+				   Methode "render_solid_terrain". Spezifizieren Sie in dieser Methode pro
 				   Vertex eine Texturkoordinate mittels der Methode "glTexCoord2d".
    *********/
 
 
-	// Go through all rows (-1)
-	for (int y = 0; y<map_height-1; y++) {
+   // Go through all rows (-1)
+	for (int y = 0; y < map_height - 1; y++) {
 
 		// ... to be completed
 
 		// Draw one strip
-		for (int x = 0; x<map_width; x++) {
+		for (int x = 0; x < map_width; x++) {
 
 			// ... to be completed
 
@@ -232,21 +232,21 @@ void terrain::set_normal(int x, int y)
 {
 	/********
 	Task 2.2.3.    Calculate the normal for the vertex that corresponds to
-	               the height map value (x, y). You can either use forward differences,
+				   the height map value (x, y). You can either use forward differences,
 				   backward differences or central differences. The latter will give
 				   the best results. The calculation is done by first determining direction
-				   vectors in X and Z and then using vector operations to get a vector that 
-				   is perpendicular to both. You find some examples for vector operations in 
+				   vectors in X and Z and then using vector operations to get a vector that
+				   is perpendicular to both. You find some examples for vector operations in
 				   this project below. Do not forget to pass the normal to OpenGL using
 				   the command glNormal3d.
 
 	Aufgabe 2.2.3. Berechnen Sie die Normalen fuer den Vertex der zum Hoehenwert (x, y)
-	               gehoert. Sie koennen entweder Vorwaerts-, Rueckwaerts- oder Zentral-
+				   gehoert. Sie koennen entweder Vorwaerts-, Rueckwaerts- oder Zentral-
 				   Differenzen verwenden. Die letzte Methode erzeugt die besten Resultate.
 				   Fuer die Berechnung werden zunaechst Richtungvektoren in X- und Z-Richtung
 				   gebildet und anschliessend mittels Vektoroperationen ein zu beiden Vektoren
 				   senkrechter Vektor berechnet. Nachfolgend ein paar Beispiele fuer Vektor-
-				   rechnungen in diesem Projekt. Vergessen Sie nicht die Normale nach der 
+				   rechnungen in diesem Projekt. Vergessen Sie nicht die Normale nach der
 				   Berechnung mittels glNormal3d an OpenGL zu senden.
 
 				   // Create a vector
@@ -286,16 +286,16 @@ void terrain::render_level_lines()
 	// Change the coordinate system so that one can work with whole units
 	glPushMatrix();
 	glTranslated(-1, 0, -1);
-	glScaled(2.0/static_cast<double>(get_heightmap_width()), 1.0/256.0, 2.0/static_cast<double>(get_heightmap_height()));
+	glScaled(2.0 / static_cast<double>(get_heightmap_width()), 1.0 / 256.0, 2.0 / static_cast<double>(get_heightmap_height()));
 
 	// Connect with lines
 	glBegin(GL_LINES);
 
 	// Render lines which were created in "create_level_lines" and stored into
 	// the list "level_lines"
-	for (int i=0; i<(int)level_lines.size(); i+=2) {
-			glVertex3d(level_lines[i  ].x(), level_lines[i  ].y(), level_lines[i  ].z());
-			glVertex3d(level_lines[i+1].x(), level_lines[i+1].y(), level_lines[i+1].z());
+	for (int i = 0; i < (int)level_lines.size(); i += 2) {
+		glVertex3d(level_lines[i].x(), level_lines[i].y(), level_lines[i].z());
+		glVertex3d(level_lines[i + 1].x(), level_lines[i + 1].y(), level_lines[i + 1].z());
 	}
 
 	glEnd();
@@ -308,20 +308,99 @@ void terrain::render_level_lines()
 
 
 
-// Create height lines for the level "level"
 void terrain::create_level_line(int level)
 {
-	/********
-	Additional Task: Find iso lines with the "Marching Squares" algorithm for the 
-	                 height value "level". Store the start and end points of the 
-					 found lines in the list "level_lines".
-    Zusatzaufgabe:   Finden Sie Hoehenlinien mittels des "Marching Squares"-Algorithmus
-	                 fuer den Hoehenwert "level". Legen Sie die Start- und Endpunkte
-					 der gefundenen Linien in der Liste "level_lines" ab.
-	*************/
+	int map_width = get_heightmap_width();
+	int map_height = get_heightmap_height();
+
+	// Iterate through each cell in the grid
+	for (int y = 0; y < map_height - 1; y++)
+	{
+		for (int x = 0; x < map_width - 1; x++)
+		{
+			// Get the height values at the four corners of the cell
+			int topLeft = get_heightmap_value(x, y);
+			int topRight = get_heightmap_value(x + 1, y);
+			int bottomLeft = get_heightmap_value(x, y + 1);
+			int bottomRight = get_heightmap_value(x + 1, y + 1);
+
+			// Determine the case value
+			int caseValue = 0;
+			if (topLeft >= level) caseValue |= 1;
+			if (topRight >= level) caseValue |= 2;
+			if (bottomRight >= level) caseValue |= 4;
+			if (bottomLeft >= level) caseValue |= 8;
+
+			// Determine the intersection points based on the case value
+			switch (caseValue)
+			{
+			case 0: // 0000
+			case 15: // 1111
+				// No lines
+				break;
+
+			case 1: // 0001
+			case 14: // 1110
+				add_line_segment(x, y + interpolate(topLeft, bottomLeft, level), x + interpolate(topLeft, topRight, level), y);
+				break;
+
+			case 2: // 0010
+			case 13: // 1101
+				add_line_segment(x + interpolate(topLeft, topRight, level), y, x + 1, y + interpolate(topRight, bottomRight, level));
+				break;
+
+			case 3: // 0011
+			case 12: // 1100
+				add_line_segment(x, y + interpolate(topLeft, bottomLeft, level), x + 1, y + interpolate(topRight, bottomRight, level));
+				break;
+
+			case 4: // 0100
+			case 11: // 1011
+				add_line_segment(x + 1, y + interpolate(topRight, bottomRight, level), x + interpolate(bottomLeft, bottomRight, level), y + 1);
+				break;
+
+			case 5: // 0101
+				add_line_segment(x, y + interpolate(topLeft, bottomLeft, level), x + interpolate(topLeft, topRight, level), y);
+				add_line_segment(x + interpolate(bottomLeft, bottomRight, level), y + 1, x + 1, y + interpolate(topRight, bottomRight, level));
+				break;
+
+			case 6: // 0110
+			case 9: // 1001
+				add_line_segment(x + interpolate(topLeft, topRight, level), y, x + interpolate(bottomLeft, bottomRight, level), y + 1);
+				break;
+
+			case 7: // 0111
+			case 8: // 1000
+				add_line_segment(x, y + interpolate(topLeft, bottomLeft, level), x + interpolate(bottomLeft, bottomRight, level), y + 1);
+				break;
+
+			case 10: // 1010
+				add_line_segment(x + interpolate(topLeft, topRight, level), y, x + 1, y + interpolate(topRight, bottomRight, level));
+				add_line_segment(x, y + interpolate(topLeft, bottomLeft, level), x + interpolate(bottomLeft, bottomRight, level), y + 1);
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
 }
 
+void terrain::add_line_segment(double x1, double y1, double x2, double y2)
+{
+	// Convert grid coordinates to world coordinates and add to level_lines
+	vec3d start(x1, get_heightmap_value(x1, y1), y1);
+	vec3d end(x2, get_heightmap_value(x2, y2), y2);
 
+	level_lines.push_back(start);
+	level_lines.push_back(end);
+}
+
+double terrain::interpolate(int height1, int height2, int level)
+{
+	// Linearly interpolate between two height values
+	return (level - height1) / static_cast<double>(height2 - height1);
+}
 
 
 // Set the light parameters
@@ -341,16 +420,16 @@ void terrain::setup_light()
 	glLoadIdentity();
 
 	// Set light parameters
-	float position[4]={1.0f,1.0f,1.0f,1.0f};
-	float ambient_color[4]={0.0f,0.0f,0.0f,1.0f};
-	float diffuse_color[4]={1.0f,1.0f,1.0f,1.0f};
-	float specular_color[4]={1.0f,1.0f,1.0f,1.0f};
+	float position[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float ambient_color[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float diffuse_color[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float specular_color[4] = { 1.0f,1.0f,1.0f,1.0f };
 	glLightfv(GL_LIGHT0, GL_POSITION, position);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient_color);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_color);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, specular_color);
 
-	glLightf(GL_LIGHT0,GL_SPOT_EXPONENT, 10.0f);   
+	glLightf(GL_LIGHT0, GL_SPOT_EXPONENT, 10.0f);
 
 	glPopMatrix();
 
@@ -375,8 +454,8 @@ void terrain::setup_projection()
 	// Also rotate with the specified angle around the Y-axis
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(2.5,2.5,0,  0,0,0,  0,1,0);
-	glRotated(angle, 0,1,0);
+	gluLookAt(2.5, 2.5, 0, 0, 0, 0, 0, 1, 0);
+	glRotated(angle, 0, 1, 0);
 }
 
 
@@ -385,7 +464,7 @@ void terrain::setup_projection()
 void terrain::advance_frame()
 {
 	// Increase angle and perform a modulo 360
-	angle = (angle+1)%360;
+	angle = (angle + 1) % 360;
 }
 
 
@@ -417,7 +496,7 @@ void terrain::set_show_levels(bool state)
 	// recreate them in equidistant ranges
 	if (show_levels) {
 		level_lines.clear();
-		for (int i=20; i<=255; i+=20)
+		for (int i = 20; i <= 255; i += 20)
 			create_level_line(i);
 	}
 
@@ -429,7 +508,7 @@ void terrain::set_show_levels(bool state)
 
 
 // Load the height map from the file "filename"
-bool terrain::load_heightmap(const char *filename)
+bool terrain::load_heightmap(const char* filename)
 {
 	// Load the heightmap by reading a bmp file
 	heightmap = BMP_ReadFile(filename);
@@ -437,21 +516,21 @@ bool terrain::load_heightmap(const char *filename)
 	// Return false and show an error message if the file
 	// could not be loaded
 	if (BMP_GetError() != BMP_OK) {
-		std::cout<<BMP_GetErrorDescription()<<std::endl;
+		std::cout << BMP_GetErrorDescription() << std::endl;
 		return false;
 	}
 
 	// All went well...
-	return true;	
+	return true;
 }
 
 
 
 
 // Load a texture and store its handle in "handle"
-bool terrain::load_texture(const char *filename, GLuint *handle)
+bool terrain::load_texture(const char* filename, GLuint* handle)
 {
-	BMP *bitmap;
+	BMP* bitmap;
 
 	// Load the texture by reading a bmp file
 	bitmap = BMP_ReadFile(filename);
@@ -459,7 +538,7 @@ bool terrain::load_texture(const char *filename, GLuint *handle)
 	// Return false and show an error message if the file
 	// could not be loaded
 	if (BMP_GetError() != BMP_OK) {
-		std::cout<<BMP_GetErrorDescription()<<std::endl;
+		std::cout << BMP_GetErrorDescription() << std::endl;
 		return false;
 	}
 
@@ -471,12 +550,12 @@ bool terrain::load_texture(const char *filename, GLuint *handle)
 	// Bind the texture
 	glBindTexture(GL_TEXTURE_2D, *handle);
 	// Enable linear blending between different mipmapping levels
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	// Clamp the texture at the borders
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 	// Transfer the image data to the graphics card.
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, BMP_GetWidth(bitmap), BMP_GetHeight(bitmap), 0, GL_RGB, GL_UNSIGNED_BYTE, data);	
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, BMP_GetWidth(bitmap), BMP_GetHeight(bitmap), 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 
 	// Not needed anymore
 	free(data);
@@ -520,10 +599,10 @@ int terrain::get_heightmap_value(int x, int y) const
 	y = abs(y);
 
 	// Mirror at the right and bottom edge if neccessary
-	if (x>=get_heightmap_width())
-		x = 2*get_heightmap_width()-x-1;
-	if (y>=get_heightmap_height())
-		y = 2*get_heightmap_height()-y-1;
+	if (x >= get_heightmap_width())
+		x = 2 * get_heightmap_width() - x - 1;
+	if (y >= get_heightmap_height())
+		y = 2 * get_heightmap_height() - y - 1;
 
 	// Read the pixel and return the red component
 	BMP_GetPixelRGB(heightmap, x, y, &r, &g, &b);
@@ -534,29 +613,29 @@ int terrain::get_heightmap_value(int x, int y) const
 
 
 // Set debug text
-void terrain::set_text(std::stringstream &stream)
+void terrain::set_text(std::stringstream& stream)
 {
 	if (!initialized) {
-		stream<<"Cannot show terrain - not all files were loaded!";
+		stream << "Cannot show terrain - not all files were loaded!";
 		return;
 	}
-	stream<<"Showing terrain";
+	stream << "Showing terrain";
 
 	if (!show_solid && !show_wireframe && !show_levels) {
-		stream<<" (all features disabled)";
+		stream << " (all features disabled)";
 		return;
 	}
 
-	stream<<" (";
+	stream << " (";
 	if (show_solid)
-		stream<<"as solid geometry";
+		stream << "as solid geometry";
 	if (show_solid && show_wireframe)
-		stream<<", ";
+		stream << ", ";
 	if (show_wireframe)
-		stream<<"as wireframe";
+		stream << "as wireframe";
 	if (show_wireframe && show_levels)
-		stream<<", ";
+		stream << ", ";
 	if (show_levels)
-		stream<<"with level lines";
-	stream<<")";
+		stream << "with level lines";
+	stream << ")";
 }

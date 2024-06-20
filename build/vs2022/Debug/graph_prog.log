@@ -1,0 +1,10 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  terrain.cpp
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(392,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(392,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(393,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\borod\source\repos\TUD-ECG-03\src\terrain.cpp(393,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  graph_prog.vcxproj -> C:\Users\borod\Source\Repos\TUD-ECG-03\build\vs2022\Debug\graph_prog.exe
+  Copy freeglut .dll to executable location
+  ..\..\dependencies\freeglut\lib\freeglut.dll
+  1 Datei(en) kopiert
