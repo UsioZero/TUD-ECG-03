@@ -116,7 +116,7 @@ void cube_system::render_system()
 void cube_system::render_cube()
 {
 	glBegin(GL_QUADS);
-	glColor3d(0.0, 0.2, 0.0);  
+	glColor3d(0.0, 0.4, 0.0);  
 	glVertex3d(-1, -1, 1);   
 	glVertex3d(1, -1, 1);    
 	glVertex3d(1, 1, 1);     
@@ -124,7 +124,7 @@ void cube_system::render_cube()
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glColor3d(0.0, 0.4, 0.0);  
+	glColor3d(0.0, 0.5, 0.0);  
 	glVertex3d(-1, -1, -1); 
 	glVertex3d(-1, 1, -1);   
 	glVertex3d(1, 1, -1);    
@@ -141,7 +141,7 @@ void cube_system::render_cube()
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glColor3d(0.0, 0.8, 0.0);  
+	glColor3d(0.0, 0.7, 0.0);  
 	glVertex3d(1, -1, -1);   
 	glVertex3d(1, 1, -1);   
 	glVertex3d(1, 1, 1);     
@@ -149,7 +149,7 @@ void cube_system::render_cube()
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glColor3d(0.0, 1.0, 0.0); 
+	glColor3d(0.0, 0.8, 0.0); 
 	glVertex3d(-1, 1, 1);    
 	glVertex3d(1, 1, 1);     
 	glVertex3d(1, 1, -1);  
@@ -157,7 +157,7 @@ void cube_system::render_cube()
 	glEnd();
 
 	glBegin(GL_QUADS);
-	glColor3d(0.0, 0.5, 0.0);  
+	glColor3d(0.0, 0.9, 0.0);  
 	glVertex3d(-1, -1, -1);  
 	glVertex3d(1, -1, -1);   
 	glVertex3d(1, -1, 1);   

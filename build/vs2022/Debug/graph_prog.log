@@ -15,6 +15,7 @@ C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(81
 C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(81,16): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(81,11): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\src\cube_system.cpp(82,22): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+application.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   graph_prog.vcxproj -> C:\Users\Oleg\Documents\projects\c++\03_graph_prog-VS2022\build\vs2022\Debug\graph_prog.exe
   Copy freeglut .dll to executable location
   ..\..\dependencies\freeglut\lib\freeglut.dll

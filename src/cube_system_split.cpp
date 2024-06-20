@@ -42,10 +42,47 @@ void cube_system_split::render()
 					 Sie keinen Code aus dieser Methode.
      ***********/
 
+	int halfWidth = width / 2;
+	int halfHeight = height / 2;
 
+	// xy
+	glViewport(0, halfHeight, halfWidth, halfHeight);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(-aspect * 5, aspect * 5, -5, 5, -10, 10);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	render_system();
 
+	// yz
+	glViewport(halfWidth, halfHeight, halfWidth, halfHeight);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(-aspect * 5, aspect * 5, -5, 5, -10, 10);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glRotatef(90, 0, 1, 0); // Rotate to look along the YZ plane
+	render_system();
 
+	// xz
+	glViewport(0, 0, halfWidth, halfHeight);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(-aspect * 5, aspect * 5, -5, 5, -10, 10);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glRotatef(90, 1, 0, 0); // Rotate to look along the XZ plane
+	render_system();
 
+	// perspective
+	glViewport(halfWidth, 0, halfWidth, halfHeight);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(45, aspect, 0.1, 100);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(10, 10, 10, 0, 0, 0, 0, 1, 0);
+	render_system();
 
 	// Restore the old view port
 	glPopAttrib();
