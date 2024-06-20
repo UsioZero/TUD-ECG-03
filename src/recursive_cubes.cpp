@@ -31,21 +31,61 @@ void recursive_cubes::render()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// Start the recursive rendering
-	render_recursive(depth, true);
+	render_recursive(depth, -1);
 }
 
 
 
 
-void recursive_cubes::render_recursive(int r, bool render_all)
+void recursive_cubes::render_recursive(int r, int skip_edge)
 {
-	// Recursion end condition
-	if (r<=0)
-		return;
+    if (r <= 0)
+        return;
 
-	// Render the actual cube
-	render_cube();
+    glPushMatrix();
 
+    render_cube();
+
+    double scale_factor = 0.5;
+    double translate_distance = 4.0;
+
+
+    glScaled(scale_factor, scale_factor, scale_factor);
+
+    for (int i = 0; i < 6; ++i) {
+		if (i == skip_edge)
+			continue;
+
+		glPushMatrix();
+
+		switch (i) {
+		case 0: 
+			glTranslated(0, 0, translate_distance);
+			break;
+		case 1: 
+			glTranslated(0, 0, -translate_distance);
+			break;
+		case 2: 
+			glTranslated(-translate_distance, 0, 0);
+			break;
+		case 3: 
+			glTranslated(translate_distance, 0, 0);
+			break;
+		case 4: 
+			glTranslated(0, translate_distance, 0);
+			break;
+		case 5: 
+			glTranslated(0, -translate_distance, 0);
+			break;
+		}
+
+		render_recursive(r - 1, (i % 2 == 0)? i + 1 : i - 1); 
+
+		glPopMatrix();
+
+    }
+
+    glPopMatrix();
 
 	/********
 	Additional Task: Recursively render the cube tree. One cube in the
